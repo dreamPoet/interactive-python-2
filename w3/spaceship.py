@@ -219,10 +219,11 @@ def rock_spawner():
     global a_rock
     # self, pos, vel, ang, ang_vel, image, info
     #  Choose a velocity, position, and angular velocity randomly for the rock. scale the random.
-    a_rock = Sprite([random.randrange(WIDTH//8, 7*WIDTH//8), random.randrange(HEIGHT//8, 7*HEIGHT//8)], 
-                    [(random.random() * 2 - 1)*2, (random.random() * 2 - 1)*2 ], 
-                    0, (random.random() * 2 - 1)*.1 , 
-                    asteroid_image, asteroid_info)
+    # random_pos = [random.randrange(WIDTH//8, 7*WIDTH//8), random.randrange(HEIGHT//8, 7*HEIGHT//8)]
+    random_pos = [random.randrange(WIDTH), random.randrange(HEIGHT)]
+    random_vel = [(random.random() * 2 - 1) * .3, (random.random() * 2 - 1) * .3 ]
+    random_avel = (random.random() * 2 - 1)*.1 
+    a_rock = Sprite(random_pos, random_vel, 0, random_avel, asteroid_image, asteroid_info)
 
     
 
